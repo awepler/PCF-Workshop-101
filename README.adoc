@@ -2,7 +2,7 @@
 
 == Schedule
 
-This one day hands-on classroom style session will provide developers (and operators) with hands on experience with Pivotal Cloud Foundry concepts, architecture and fundamentals of pushing code and building applications. The session includes presentations, demos and hands on labs
+This half day hands-on classroom style session will provide developers (and operators) with an introduction to cloud native concepts, hands on experience with Pivotal Cloud Foundry, architecture and fundamentals of pushing code and building applications. The session includes presentations, demos and hands on labs
 
 11:00 PM - 11:30 PM::
  * Session 1: _Welcome to the Cloud Native Enterprise_ 
