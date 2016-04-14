@@ -1,15 +1,17 @@
 = Lab 1 - From Zero to Pushing Your First Application
 
-== Target
+== Target & Env Setup
 
-. If you haven't already, download the latest release of the Cloud Foundry CLI from https://github.com/cloudfoundry/cli/releases for your operating system and install it.
+. If you haven't already, you should have the latest release of the Cloud Foundry CLI from https://github.com/cloudfoundry/cli/releases for your operating system isntalled.
 
 . Set the API target for the CLI: (set appropriate end point for your environment)
 +
 ----
-$ cf api https://api.devcloudwest.inbcu.com --skip-ssl-validation
+$ cf api https://api.run.pez.pivotal.io --skip-ssl-validation
 ----
-
+. Stage the appropriate files (spring-music.war, manifest.yml) on a desktop directory.  It's important the files are placed in the same directory($CF_DIRECTORY).
++
+----
 . Login to Pivotal Cloudfoundry:
 +
 ----
@@ -23,7 +25,7 @@ Follow the prompts
 . Change to the _cf-spring-mvc-boot_ sample application directory:
 +
 ----
-$ cd $BOOTCAMP_HOME/cf-spring-mvc-boot
+$ cd $CF_DIRECTORY
 ----
 
 . Push the application!
@@ -36,57 +38,94 @@ You should see output similar to the following listing. Take a look at the listi
 +
 ====
 ----
-Using manifest file /Users/phopper/workspace/NBCU-PCF-Workshop-101/cf-spring-mvc-boot/manifest.yml <1>
+Using manifest file /Users/weplea/Documents/boeingWorkshop/manifest.yml
 
-Creating app workshop in org TELCO / space hopper as phopper@pivotal.io...
-OK <2>
+Creating app spring-music-copy in org pivot-awepler / space development as awepler@pivotal.io...
+OK
 
-Creating route workshop-philologic-catchpolery.vert.fe.gopivotal.com...
-OK <3>
+Creating route spring-music-copy-unmomentous-trader.cfapps.pez.pivotal.io...
+OK
 
-Binding workshop-philologic-catchpolery.vert.fe.gopivotal.com to workshop...
-OK <4>
+Binding spring-music-copy-unmomentous-trader.cfapps.pez.pivotal.io to spring-music-copy...
+OK
 
-Uploading workshop... <5>
-Uploading app files from: /Users/phopper/workspace/NBCU-PCF-Workshop-101/cf-spring-mvc-boot/target/cf-spring-mvc-boot-0.0.1-SNAPSHOT.jar
-Uploading 10.6M, 153 files
+Uploading spring-music-copy...
+Uploading app files from: /Users/weplea/Documents/boeingWorkshop/spring-music.war
+Uploading 457K, 88 files
 Done uploading               
 OK
 
-Starting app workshop in org TELCO / space hopper as phopper@pivotal.io... <6>
------> Downloaded app package (27M)
------> Java Buildpack Version: v3.1.1 (offline) | https://github.com/cloudfoundry/java-buildpack#7a538fb
------> Downloading Open Jdk JRE 1.8.0_51 from https://download.run.pivotal.io/openjdk/trusty/x86_64/openjdk-1.8.0_51.tar.gz (found in cache)
-       Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (1.5s) <7>
------> Downloading Open JDK Like Memory Calculator 1.1.1_RELEASE from https://download.run.pivotal.io/memory-calculator/trusty/x86_64/memory-calculator-1.1.1_RELEASE (found in cache)
-       Memory Settings: -Xss995K -Xmx382293K -Xms382293K -XX:MaxMetaspaceSize=64M -XX:MetaspaceSize=64M
------> Downloading Spring Auto Reconfiguration 1.7.0_RELEASE from https://download.run.pivotal.io/auto-reconfiguration/auto-reconfiguration-1.7.0_RELEASE.jar (found in cache)
+Starting app spring-music-copy in org pivot-awepler / space development as awepler@pivotal.io...
+Downloading java_buildpack_offline...
+Downloading ruby_buildpack...
+Downloading nodejs_buildpack...
+Downloading go_buildpack...
+Downloading python_buildpack...
+Downloading php_buildpack...
+Downloading staticfile_buildpack...
+Downloading binary_buildpack...
+Downloading null_buildpack...
+Downloading tc_server_buildpack_offline...
+Downloading secure-java-buildpack...
+Downloaded java_buildpack_offline
+Downloaded python_buildpack
+Downloaded null_buildpack
+Downloaded secure-java-buildpack
+Downloaded staticfile_buildpack
+Downloaded php_buildpack
+Downloaded nodejs_buildpack
+Downloaded go_buildpack
+Downloaded binary_buildpack
+Downloaded ruby_buildpack
+Downloaded tc_server_buildpack_offline
+Creating container
+Successfully created container
+Downloading app package...
+Downloaded app package (24.5M)
+Staging...
+-----> Java Buildpack Version: v3.6 (offline) | https://github.com/cloudfoundry/java-buildpack.git#5194155
+-----> Downloading Open Jdk JRE 1.8.0_71 from https://download.run.pivotal.io/openjdk/trusty/x86_64/openjdk-1.8.0_71.tar.gz (found in cache)
+       Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (1.1s)
+-----> Downloading Open JDK Like Memory Calculator 2.0.1_RELEASE from https://download.run.pivotal.io/memory-calculator/trusty/x86_64/memory-calculator-2.0.1_RELEASE.tar.gz (found in cache)
+       Memory Settings: -XX:MetaspaceSize=64M -Xss995K -Xmx382293K -XX:MaxMetaspaceSize=64M -Xms382293K
+-----> Downloading Spring Auto Reconfiguration 1.10.0_RELEASE from https://download.run.pivotal.io/auto-reconfiguration/auto-reconfiguration-1.10.0_RELEASE.jar (found in cache)
+-----> Downloading Tomcat Instance 8.0.30 from https://download.run.pivotal.io/tomcat/tomcat-8.0.30.tar.gz (found in cache)
+       Expanding Tomcat Instance to .java-buildpack/tomcat (0.1s)
+-----> Downloading Tomcat Lifecycle Support 2.5.0_RELEASE from https://download.run.pivotal.io/tomcat-lifecycle-support/tomcat-lifecycle-support-2.5.0_RELEASE.jar (found in cache)
+-----> Downloading Tomcat Logging Support 2.5.0_RELEASE from https://download.run.pivotal.io/tomcat-logging-support/tomcat-logging-support-2.5.0_RELEASE.jar (found in cache)
+-----> Downloading Tomcat Access Logging Support 2.5.0_RELEASE from https://download.run.pivotal.io/tomcat-access-logging-support/tomcat-access-logging-support-2.5.0_RELEASE.jar (found in cache)
+Exit status 0
+Staging complete
+Uploading droplet, build artifacts cache...
+Uploading build artifacts cache...
+Uploading droplet...
+Uploaded build artifacts cache (108B)
+Uploaded droplet (76.7M)
+Uploading complete
 
------> Uploading droplet (72M) <8>
-
-0 of 1 instances running, 1 starting
-0 of 1 instances running, 1 starting
-1 of 1 instances running
+0 of 2 instances running, 2 starting
+0 of 2 instances running, 2 starting
+2 of 2 instances running
 
 App started
 
+
 OK
 
-App workshop was started using this command `CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpack-memory-calculator-1.1.1_RELEASE -memorySizes=metaspace:64m.. -memoryWeights=heap:75,metaspace:10,stack:5,native:10 -totMemory=$MEMORY_LIMIT) && SERVER_PORT=$PORT $PWD/.java-buildpack/open_jdk_jre/bin/java -cp $PWD/.:$PWD/.java-buildpack/spring_auto_reconfiguration/spring_auto_reconfiguration-1.7.0_RELEASE.jar -Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh $CALCULATED_MEMORY -Djava.security.egd=file:///dev/urandom org.springframework.boot.loader.JarLauncher` <9>
+App spring-music-copy was started using this command `CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpack-memory-calculator-2.0.1_RELEASE -memorySizes=metaspace:64m.. -memoryWeights=heap:75,metaspace:10,native:10,stack:5 -memoryInitials=heap:100%,metaspace:100% -totMemory=$MEMORY_LIMIT) &&  JAVA_HOME=$PWD/.java-buildpack/open_jdk_jre JAVA_OPTS="-Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh $CALCULATED_MEMORY -Daccess.logging.enabled=false -Dhttp.port=$PORT" exec $PWD/.java-buildpack/tomcat/bin/catalina.sh run`
 
-Showing health and status for app workshop in org TELCO / space hopper as phopper@pivotal.io... <10>
+Showing health and status for app spring-music-copy in org pivot-awepler / space development as awepler@pivotal.io...
 OK
 
 requested state: started
-instances: 1/1
-usage: 512M x 1 instances
-urls: workshop-philologic-catchpolery.vert.fe.gopivotal.com
-last uploaded: Thu Sep 24 20:15:27 UTC 2015
-stack: cflinuxfs2
-buildpack: java-buildpack=v3.1.1-offline-https://github.com/cloudfoundry/java-buildpack#7a538fb java-main java-opts open-jdk-like-jre=1.8.0_51 open-jdk-like-memory-calculator=1.1.1_RELEASE spring-auto-reconfiguration=1.7.0_RELEASE
+instances: 2/2
+usage: 512M x 2 instances
+urls: spring-music-copy-unmomentous-trader.cfapps.pez.pivotal.io
+last uploaded: Thu Apr 14 17:24:17 UTC 2016
 
-     state     since                    cpu    memory           disk           details   
-#0   running   2015-09-24 02:16:11 PM   2.4%   392.6M of 512M   151.6M of 1G 
+     state     since                    cpu    memory           disk   
+#0   running   2016-04-14 10:25:17 AM   0.0%   0 of 512M        0 of 1G   
+#1   running   2016-04-14 10:25:19 AM   0.0%   320.8M of 512M   158.4M of 1G 
 ----
 <1> The CLI is using a manifest to provide necessary configuration details such as application name, memory to be allocated, and path to the application artifact.
 Take a look at `manifest.yml` to see how.
