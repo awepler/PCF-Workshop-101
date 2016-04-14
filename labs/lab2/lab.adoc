@@ -2,7 +2,7 @@
 
 [abstract]
 --
-The _Workshop_ application was designed to illustrate the ease with which data services can be bound to and utilized by applications running on Cloud Foundry.
+The _Spring-Music_ application was designed to illustrate the ease with which data services can be bound to and utilized by applications running on Cloud Foundry.
 In this lab, we'll be binding the application to a MySQL databases.
 
 Cloud Foundry services are managed through two primary types of operations:
@@ -14,7 +14,7 @@ Bind/Unbind:: These operations create or delete unique credential sets for an ex
 
 == A Bit of Review
 
-Your instance of the sample _Workshop_ should not be running after the steps completed in lab 1.  Make sure to change to the _cf-spring-mvc-boot_ sample application directory.  For this lab we will be using the Java application.  Deploy the application:
+Your instance of the sample _Spring-Music_ should not be running after the steps completed in lab 1.  Make sure to change back to your local directory where we deployed to PCF from in the lab 1.  We are going to use the same application for this lab as well.  Deploy the application:
 
 ----
 $ cf push
