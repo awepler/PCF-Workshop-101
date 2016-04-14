@@ -44,7 +44,7 @@ image::image2.png[]
 
 and you'll see the same service/plan/description listing in the browser:
 
-image::lab2.png[]
+image::image3.png[]
 
 == Creating and Binding to a Service Instance
 
