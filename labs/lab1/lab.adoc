@@ -9,11 +9,9 @@
 ----
 $ cf api https://api.run.pez.pivotal.io --skip-ssl-validation
 ----
-. Stage the appropriate files (spring-music.war, manifest.yml) on a desktop directory.  It's important the files are placed in the same directory($CF_DIRECTORY).
+. Stage the appropriate files (spring-music.war, manifest.yml) in a directory you can access.  It's important the files are placed in the same directory.
 +
-----
-. Login to Pivotal Cloudfoundry:
-+
+
 ----
 $ cf login
 ----
