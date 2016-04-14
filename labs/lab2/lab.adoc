@@ -40,7 +40,7 @@ If you haven't already, login to it by visiting https://login.run.pez.pivotal.io
 
 Click on the ''Marketplace'' link:
 
-image::lab1.png[]
+image::image2.png[]
 
 and you'll see the same service/plan/description listing in the browser:
 
