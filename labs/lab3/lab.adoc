@@ -65,35 +65,27 @@ last uploaded: Thu Apr 14 17:24:17 UTC 2016
 . We can scale the application instances back down as easily as we scaled them up, using the same command structure:
 +
 ----
-$ cf scale -i 1 workshop
-Scaling app workshop in org TELCO / space gammon as jtgammon@pivotal.io...
+$ cf scale -i 1 spring-music
+Scaling app spring-music in org pivot-awepler / space development as awepler@pivotal.io...
 OK
 ----
 
 . Check the application status again:
 +
 ----
-$ cf app workshop
-Showing health and status for app workshop in org TELCO / space gammon as jtgammon@pivotal.io...
+$ cf app spring-music
+Showing health and status for app spring-music in org pivot-awepler / space development as awepler@pivotal.io...
 OK
 
 requested state: started
 instances: 1/1
 usage: 512M x 1 instances
-urls: workshop.vert.fe.gopivotal.com, workshop-queasier-backup.vert.fe.gopivotal.com
-last uploaded: Fri Aug 7 13:15:14 UTC 2015
-stack: cflinuxfs2
-buildpack: java-buildpack=v3.0-offline-https://github.com/cloudfoundry/java-buildpack.git#3bd15e1 open-jdk-jre=1.8.0_40 spring-auto-reconfiguration=1.7.0_RELEASE tomcat-access-logging-support=2.4.0_RELEASE tomcat-instance=8.0.21 tomcat-lifecycle-support=2.4.0_REL...
+urls: spring-music-copy-unmomentous-trader.cfapps.pez.pivotal.io
+last uploaded: Thu Apr 14 17:24:17 UTC 2016
 
-     state     since                    cpu    memory           disk           details
-#0   running   2015-08-07 11:33:21 AM   0.1%   477.9M of 512M   144.4M of 1G
+     state     since                    cpu    memory           disk   
+#0   running   2016-04-14 12:20:35 PM   0.1%   461.9M of 512M   158.4M of 1G 
 ----
-+
-As you can see, we're back down to only one instance running, and it is in fact the original index 0 that we started with.
-
-. Confirm that by again revisiting the route in the browser and checking the instance index:
-+
-image::lab1.png[]
 
 == HTTP Routing
 
