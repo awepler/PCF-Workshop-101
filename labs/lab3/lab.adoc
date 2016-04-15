@@ -22,20 +22,20 @@ In reporting `OK`, the CLI is letting you know that the additional requested ins
 +
 ====
 ----
-$ cf app spring-music-copy
-Showing health and status for app spring-music-copy in org pivot-awepler / space development as awepler@pivotal.io...
+$ cf app spring-music
+Showing health and status for app spring-music in org pivot-awepler / space development as awepler@pivotal.io...
 OK
 
 requested state: started
 instances: 3/3
 usage: 512M x 3 instances
-urls: spring-music-copy-unmomentous-trader.cfapps.pez.pivotal.io
+urls: spring-music-unmomentous-trader.cfapps.pez.pivotal.io
 last uploaded: Thu Apr 14 17:24:17 UTC 2016
 
-     state     since                    cpu    memory           disk   
-#0   running   2016-04-14 12:20:35 PM   0.1%   461M of 512M     158.4M of 1G   
-#1   running   2016-04-15 02:55:16 AM   0.1%   503.2M of 512M   158.4M of 1G   
-#2   running   2016-04-15 10:24:37 AM   0.0%   417.8M of 512M   158.4M of 1G  
+     state      since                    cpu    memory           disk   
+#0   running    2016-04-14 12:20:35 PM   0.1%   461M of 512M     158.4M of 1G   
+#1   starting   2016-04-15 10:29:19 AM   0.0%   692K of 512M     1.3M of 1G   
+#2   starting   2016-04-15 10:29:19 AM   0.0%   226.3M of 512M   158.4M of 1G   
 ----
 <1> This application instance has completed the startup process and is actually able to accept requests.
 <2> This application instance is still starting and will not have any requests routed to it.
@@ -44,14 +44,14 @@ last uploaded: Thu Apr 14 17:24:17 UTC 2016
 . Eventually all instances will converge to a running state:
 +
 ----
-$ cf app spring-music-copy
-Showing health and status for app spring-music-copy in org pivot-awepler / space development as awepler@pivotal.io...
+$ cf app spring-music
+Showing health and status for app spring-music in org pivot-awepler / space development as awepler@pivotal.io...
 OK
 
 requested state: started
 instances: 3/3
 usage: 512M x 3 instances
-urls: spring-music-copy-unmomentous-trader.cfapps.pez.pivotal.io
+urls: spring-music-unmomentous-trader.cfapps.pez.pivotal.io
 last uploaded: Thu Apr 14 17:24:17 UTC 2016
 
      state     since                    cpu    memory           disk   
