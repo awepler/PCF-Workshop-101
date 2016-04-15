@@ -89,29 +89,27 @@ last uploaded: Thu Apr 14 17:24:17 UTC 2016
 
 == HTTP Routing
 
-There are two ways to discover what routes, or HTTP URLs, are ampped to an application
+There are two ways to discover what routes, or HTTP URLs, are mapped to an application
 The first is available via the CLI. Just type:
 
 ----
-$ cf app workshop
-Showing health and status for app workshop in org TELCO / space zwickey as azwickey@pivotal.io...
+$ cf app spring-music
+Showing health and status for app spring-music in org pivot-awepler / space development as awepler@pivotal.io...
 OK
 
 requested state: started
-instances: 3/3
-usage: 512M x 3 instances
-urls: workshop-leishmanial-preobligation.vert.fe.gopivotal.com
-last uploaded: Fri Sep 25 15:07:25 UTC 2015
-stack: cflinuxfs2
-buildpack: java-buildpack=v3.1.1-offline-https://github.com/cloudfoundry/java-buildpack#7a538fb java-main java-opts open-jdk-like-jre=1.8.0_51 open-jdk-like-memory-calculator=1.1.1_RELEASE spring-auto-reconfiguration=1.7.0_RELEASE
+instances: 1/1
+usage: 512M x 1 instances
+urls: spring-music-copy-unmomentous-trader.cfapps.pez.pivotal.io
+last uploaded: Thu Apr 14 17:24:17 UTC 2016
 
-     state     since                    cpu    memory           disk           details
-#0   running   2015-09-25 11:11:33 AM   0.1%   411.6M of 512M   151.6M of 1G
+     state     since                    cpu    memory           disk   
+#0   running   2016-04-14 12:20:35 PM   0.1%   461.9M of 512M   158.4M of 1G  
 ----
 
 and you'll see the list of routes in the section that says _urls_.
 
-The second way is via the Apps Manager UI.  Click on the _Workshop_ application to view application details.  Select the _Routes_ tab to view a list of mapped routes:
+The second way is via the Apps Manager UI.  Click on the _Spring-Music_ application to view application details.  Select the _Routes_ tab to view a list of mapped routes:
 
 image::lab2.png[]
 
