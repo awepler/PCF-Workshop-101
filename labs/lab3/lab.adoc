@@ -115,15 +115,15 @@ image::image6.png[]
 
 . We can easily add an additional route by clicking on _+ Map a Route_ and supplying the new hostname:
 +
-image::lab3.png[]
+image::image7.png[]
 
 . Navigate to the new URL in your browser window.  You should see that same application displayed!
 +
-image::lab4.png[]
+image::image8.png[]
 
 . We can just as easily remove a route by clicking on _Unmap_ on the route you wish to remove.
 +
-image::lab5.png[]
+image::image9.png[]
 +
 If you navigate to that URL you'll receive a HTTP 404 response
 +
