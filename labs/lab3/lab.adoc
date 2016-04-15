@@ -127,7 +127,7 @@ image::image9.png[]
 +
 If you navigate to that URL you'll receive a HTTP 404 response
 +
-image::lab6.png[]
+image::image10.png[]
 
 . This is how blue-green deployments are accomplished.
 +
