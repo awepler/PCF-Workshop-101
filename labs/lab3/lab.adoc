@@ -111,7 +111,7 @@ and you'll see the list of routes in the section that says _urls_.
 
 The second way is via the Apps Manager UI.  Click on the _Spring-Music_ application to view application details.  Select the _Routes_ tab to view a list of mapped routes:
 
-image::lab2.png[]
+image::image6.png[]
 
 . We can easily add an additional route by clicking on _+ Map a Route_ and supplying the new hostname:
 +
