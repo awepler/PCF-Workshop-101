@@ -91,8 +91,8 @@ image::papertrail_4.png[]
 . We'll use a Cloud Foundry http://docs.cloudfoundry.org/devguide/services/user-provided.html[user-provided service instance] to create the log drain for our application using the URL + Port provided by Papertrail:
 +
 ----
-$ cf cups workshop-logs -l syslog://logs2.papertrailapp.com:43882
-Creating user provided service workshop-logs in org TELCO / space gammon as admin...
+$ cf cups spring-music-logs -l syslog://logs2.papertrailapp.com:43882
+Creating user provided spring-music-logs in org pivot-awepler / space development as awepler@pivotal.io...
 OK
 ----
 
@@ -100,7 +100,7 @@ OK
 +
 ----
 $ cf bind-service workshop workshop-logs
-Binding service workshop-logs to app workshop in org TELCO / space gammon as admin...
+Binding service spring-music-logs to app workshop in org pivot-awepler / space development as awepler@pivotal.io...
 OK
 TIP: Use 'cf restage workshop' to ensure your env variable changes take effect
 ----
@@ -121,10 +121,10 @@ You can see how to connect to other third-party log management systems in the ht
 
 Cloud Foundry's http://docs.cloudfoundry.org/concepts/architecture/#hm9k[Heatlh Manager] actively monitors the health of our application processes and will restart them should they crash.
 
-. If you don't have one already running, start a log tail for `workshop`.  Alternatively, you could view the logs using the papertrail app.
+. If you don't have one already running, start a log tail for `spring-music`.  Alternatively, you could view the logs using the papertrail app.
 +
 ----
-$ cf logs workshop
+$ cf logs spring-music
 ----
 
 . If you do not have more than one application instance running, execute the scale command to scale to 2 or more application instances.  Visit the application in the browser, and click on the ``Kill Switch'' button. This button will trigger a JVM exit with an error code (`System.exit(1)`), causing the Health Manager to observe an application instance crash:
