@@ -108,7 +108,7 @@ TIP: Use 'cf restage workshop' to ensure your env variable changes take effect
 . We'll use a `cf restart` rather than `cf restage` to make the binding take effect:
 +
 ----
-$ cf restart workshop
+$ cf restart spring-music
 ----
 
 . Navigate to the home Dashboard of the Papertrail app and select your 'system' to see log events immediately flowing to the log viewing page:
@@ -187,7 +187,7 @@ Take a look at the events that have transpired so far for our deployment of `wor
 
 ====
 ----
-$ cf events workshop
+$ cf events spring-music
 Getting events for app workshop in org TELCO / space gammon as admin...
 
 time                          event                 actor      description
@@ -212,16 +212,16 @@ Here we see the `app.create` event, which created our application's record and s
 . Let's explicitly ask for the application to be stopped:
 +
 ----
-$ cf stop workshop
-Stopping app workshop in org TELCO / space gammon as admin...
+$ cf stop spring-music
+Stopping app spring-music in org TELCO / space gammon as admin...
 OK
 ----
 
 . Now, examine the additional `app.update` event:
 +
 ----
-$ cf events workshop
-Getting events for app workshop in org TELCO / space gammon as admin...
+$ cf events spring-music
+Getting events for app spring-music in org TELCO / space gammon as admin...
 
 time                          event                 actor      description
 2015-08-11T09:01:35.00-0400   audit.app.update      admin      state: STOPPED
@@ -238,8 +238,8 @@ time                          event                 actor      description
 . Start the application again:
 +
 ----
-$ cf start workshop
-Starting app workshop in org TELCO / space gammon as admin...
+$ cf start spring-music
+Starting app spring-music in org TELCO / space gammon as admin...
 
 0 of 5 instances running, 5 starting
 2 of 5 instances running, 3 starting
@@ -251,7 +251,7 @@ OK
 
 App workshop was started using this command `JAVA_HOME=$PWD/.java-buildpack/open_jdk_jre JAVA_OPTS="-Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh -Xmx382293K -Xms382293K -XX:MaxMetaspaceSize=64M -XX:MetaspaceSize=64M -Xss995K -Djava.security.egd=file:///dev/urandom -Daccess.logging.enabled=false -Dhttp.port=$PORT" $PWD/.java-buildpack/tomcat/bin/catalina.sh run`
 
-Showing health and status for app workshop in org TELCO / space gammon as admin...
+Showing health and status for app srping-music in org TELCO / space gammon as admin...
 OK
 
 requested state: started
@@ -273,8 +273,8 @@ buildpack: java-buildpack=v3.0-offline-https://github.com/cloudfoundry/java-buil
 . And again, view the additional `app.update` event:
 +
 ----
-$ cf events workshop
-Getting events for app workshop in org TELCO / space gammon as admin...
+$ cf events spring-music
+Getting events for app spring-music in org TELCO / space gammon as admin...
 
 time                          event                 actor      description
 2015-08-11T09:02:17.00-0400   audit.app.update      admin      state: STARTED
