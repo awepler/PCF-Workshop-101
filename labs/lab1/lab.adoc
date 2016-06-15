@@ -11,7 +11,10 @@ $ cf api https://api.run.pez.pivotal.io --skip-ssl-validation
 ----
 . Stage the appropriate files (spring-music.war, manifest.yml) in a directory you can access.  It's important the files are placed in the same directory.
 +
-
+----
+vi manifest.yml (Change name of app name to spring-music-"initials"
+----
++
 ----
 $ cf login
 ----
